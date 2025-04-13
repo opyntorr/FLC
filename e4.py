@@ -38,23 +38,23 @@ rules = [
     ctrl.Rule(left_sensor['far'] & front_sensor['far'] & right_sensor['near'],
               (left_motor['reverse'], right_motor['forward'])),
 
+    ctrl.Rule(left_sensor['far'] & front_sensor['near'] & right_sensor['near'],
+              (left_motor['reverse'], right_motor['forward'])),
+
     ctrl.Rule(left_sensor['far'] & front_sensor['near'] & right_sensor['far'],
               (left_motor['forward'], right_motor['reverse'])),
 
-    ctrl.Rule(left_sensor['far'] & front_sensor['near'] & right_sensor['near'],
-              (left_motor['reverse'], right_motor['reverse'])),
-
-    ctrl.Rule(left_sensor['near'] & front_sensor['far'] & right_sensor['far'],
-              (left_motor['forward'], right_motor['reverse'])),
-
-    ctrl.Rule(left_sensor['near'] & front_sensor['far'] & right_sensor['near'],
-              (left_motor['reverse'], right_motor['reverse'])),
-
     ctrl.Rule(left_sensor['near'] & front_sensor['near'] & right_sensor['far'],
-              (left_motor['reverse'], right_motor['reverse'])),
+              (left_motor['forward'], right_motor['reverse'])),
 
     ctrl.Rule(left_sensor['near'] & front_sensor['near'] & right_sensor['near'],
               (left_motor['reverse'], right_motor['reverse'])),
+
+    ctrl.Rule(left_sensor['near'] & front_sensor['far'] & right_sensor['near'],
+              (left_motor['forward'], right_motor['reverse'])),
+
+    ctrl.Rule(left_sensor['near'] & front_sensor['far'] & right_sensor['far'],
+              (left_motor['forward'], right_motor['reverse'])),
 ]
 
 # === Sistema de control ===
